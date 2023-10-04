@@ -23,7 +23,8 @@
 </head>
 
 <body>
-    <form action="/register" method="post" id="form">
+    <form action="/users" method="post" id="form">
+        @csrf
         <div>
             <label for="username">Username</label>
             <input type="text" class="form-control" name="username" id="username" aria-describedby="inputGroupPrepend"
