@@ -16,15 +16,17 @@ class UserController extends Controller
 
         // $user = User::all()->toArray();
 
-        $users = User::all();
+        // $users = DB::table("users")
+        //     ->where("id", ">", "1");
 
-        $users = $users->reject(function (User $user) {
-            return $user->name == "bijyvop";
-        });
+        // $users = $users->where("id", "<", "4")->get();
 
-        dd($users);
+        $users = User::where("id", ">", "1");
+        $users = User::where("id", ">", "5")->get();
 
-        return view("users");
+        return view("users",[
+            "users" => $users
+        ]);
     }
 
     public function store(Request $request)

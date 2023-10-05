@@ -11,15 +11,15 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
 
-    <style>
-        #form {
-            position: absolute;
-            top: 30%;
-            left: 15%;
-            transform: translate(-50%, -50%);
-            padding: 10px;
-        }
-    </style>
+    {{-- <style> --}}
+    {{--     #form { --}}
+    {{--         position: absolute; --}}
+    {{--         top: 30%; --}}
+    {{--         left: 15%; --}}
+    {{--         transform: translate(-50%, -50%); --}}
+    {{--         padding: 10px; --}}
+    {{--     } --}}
+    {{-- </style> --}}
 </head>
 
 <body>
@@ -46,6 +46,14 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
+
+    <div>
+        <ol>
+            @foreach($users as $user)
+            <li>{{$user->name}}</li>
+            @endforeach
+        </ol>
+    </div>
 </body>
 
 </html>
