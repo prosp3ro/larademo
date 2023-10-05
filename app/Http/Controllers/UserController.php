@@ -10,11 +10,19 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = User::orderBy('name')
-            ->take(2)
-            ->get();
+        // $user = User::orderBy('name')
+        //     ->take(2)
+        //     ->get();
 
-        dd($user);
+        // $user = User::all()->toArray();
+
+        $users = User::all();
+
+        $users = $users->reject(function (User $user) {
+            return $user->name == "bijyvop";
+        });
+
+        dd($users);
 
         return view("users");
     }
