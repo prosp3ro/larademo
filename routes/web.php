@@ -20,4 +20,6 @@ Route::get('/', [IndexController::class, "index"]);
 Route::get('/users', [UserController::class, "index"]);
 Route::post('/users', [UserController::class, "store"]);
 
-Route::get('/users/{uuid}', [UserController::class, "showUserData"]);
+Route::get('/users/{uuid}', [UserController::class, "showUserData"])
+    ->where("uuid", "^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$")
+    ->name("profile");

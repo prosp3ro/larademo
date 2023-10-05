@@ -56,7 +56,7 @@
     {{-- </div> --}}
 
     <div>
-        <a href="/users/{{$users->id}}">click this link</a>
+        <a href="{{route('profile', [ "uuid" => $users->id ])}}">click this link</a>
     </div>
 </body>
 
