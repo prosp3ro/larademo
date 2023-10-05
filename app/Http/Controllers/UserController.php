@@ -10,6 +10,12 @@ class UserController extends Controller
 {
     public function index()
     {
+        $user = User::orderBy('name')
+            ->take(2)
+            ->get();
+
+        dd($user);
+
         return view("users");
     }
 
@@ -26,8 +32,6 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ]);
-
-        dd($user->id);
 
         // $user = new User();
         // $user->name = $request->username;

@@ -22,6 +22,13 @@ class User extends Authenticatable
     protected $table = 'users';
 
     /**
+     * The "type" of the auto-incrementing ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
+
+    /**
      * The primary key associated with the table.
      *
      * @var string
@@ -58,4 +65,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Names of timestamp columns
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+
+    /**
+     * The storage format of the model's date columns.
+     *
+     * @var string
+     */
+    // protected $dateFormat = 'd-m-Y H:i';
 }
