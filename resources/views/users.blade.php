@@ -47,12 +47,16 @@
         </div>
     </form>
 
+    {{-- <div> --}}
+    {{--     <ol> --}}
+    {{--         @foreach($users as $user) --}}
+    {{--         <li>{{$user->id}}</li> --}}
+    {{--         @endforeach --}}
+    {{--     </ol> --}}
+    {{-- </div> --}}
+
     <div>
-        <ol>
-            @foreach($users as $user)
-            <li>{{$user->name}}</li>
-            @endforeach
-        </ol>
+        <a href="/users/{{$users->id}}">click this link</a>
     </div>
 </body>
 

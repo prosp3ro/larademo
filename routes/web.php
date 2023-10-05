@@ -19,3 +19,5 @@ Route::get('/', [IndexController::class, "index"]);
 
 Route::get('/users', [UserController::class, "index"]);
 Route::post('/users', [UserController::class, "store"]);
+
+Route::get('/users/{uuid}', [UserController::class, "showUserData"]);

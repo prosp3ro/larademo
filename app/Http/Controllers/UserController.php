@@ -21,8 +21,7 @@ class UserController extends Controller
 
         // $users = $users->where("id", "<", "4")->get();
 
-        $users = User::where("id", ">", "1");
-        $users = User::where("id", ">", "5")->get();
+        $users = User::all()->first();
 
         return view("users",[
             "users" => $users
@@ -51,5 +50,10 @@ class UserController extends Controller
         // $user->save();
 
         return redirect('/users');
+    }
+
+    public function showUserData(string $uuid)
+    {
+        dump($uuid);
     }
 }
