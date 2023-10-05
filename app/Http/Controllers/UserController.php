@@ -21,12 +21,20 @@ class UserController extends Controller
 
         // DB::table("users")
 
-        $user = new User();
-        $user->name = $request->username;
-        $user->email = $request->email;
-        $user->password = $request->password;
+        $user = User::create([
+            'name' => $request->username,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
 
-        $user->save();
+        dd($user->id);
+
+        // $user = new User();
+        // $user->name = $request->username;
+        // $user->email = $request->email;
+        // $user->password = $request->password;
+
+        // $user->save();
 
         return redirect('/users');
     }
